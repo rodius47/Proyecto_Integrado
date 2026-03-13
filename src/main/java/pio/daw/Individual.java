@@ -12,6 +12,29 @@ public class Individual extends Videojuego{
         this.narrativa = narrativa;
         this.duracion = duracion;
     }
+    
+    public void setNarrativa(String narrativa){
+        this.narrativa = narrativa;
+    }
+
+    public String getNarrativa(){
+        return narrativa;
+    }
+
+    public void setMundo(String mundo){
+        this.mundo = mundo;
+    }
+
+    public String getMundo(){
+        return mundo;
+    }
+    public void setDuracion(Float duracion){
+        this.duracion = duracion;
+    }
+
+    public Float getDuracion(){
+        return duracion;
+    }
 
 
 

@@ -29,39 +29,22 @@ public class Multijugador extends Videojuego{
 
     }
 
-    //Esto en principio no se usaria
-    // public String getNombre() {
-    //     return nombre;
-    // }
+    public Integer getNumeroJugadores(){ 
+        return numeroJugadores;
+    }
 
-    // public void setNombre(String nombre) {
-    //     this.nombre = nombre;
-    // }
+    public void setNumeroJugadores(Integer numeroJugadores){
+        this.numeroJugadores = numeroJugadores;
+    }
 
-    // public String getDesarrolladora() {
-    //     return desarrolladora;
-    // }
+    public void setModoDeJuego(String modoDeJuego){
+        this.modoDeJuego = modoDeJuego;
+    }
 
-    // public void setDesarrolladora(String desarrolladora) {
-    //     this.desarrolladora = desarrolladora;
-    // }
+    public String getModoDeJuego(){
+        return modoDeJuego;
+    }
 
-    // public String getGenero() {
-    //     return genero;
-    // }
-
-    // public void setGenero(String genero) {
-    //     this.genero = genero;
-    // }
-
-    // public String getPlataforma() {
-    //     return plataforma;
-    // }
-    
-    // public void setPlataforma(String plataforma) {
-    //     this.plataforma = plataforma;
-    // }
-    
     // public String informacion(){
     //     return System.out.printf("%s,  ", );
     // }

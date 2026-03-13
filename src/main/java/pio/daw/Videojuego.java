@@ -24,6 +24,49 @@ public abstract class Videojuego {// implements Valorable, Exportable
         this.precio = precio;
     }
 
+    //Esto en principio no se usaria
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDesarrolladora() {
+        return desarrolladora;
+    }
+
+    public void setDesarrolladora(String desarrolladora) {
+        this.desarrolladora = desarrolladora;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getPlataforma() {
+        return plataforma;
+    }
+    
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
+
+     public Float getPrecio() {
+        return precio;
+    }
+    
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
+    
+
     // public abstract String informacion();
 
 }
