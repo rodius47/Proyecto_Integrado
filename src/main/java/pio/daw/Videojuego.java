@@ -1,29 +1,45 @@
 package pio.daw;
 
-public abstract class Videojuego {// implements Valorable, Exportable
-    private String nombre;
-    private String desarrolladora;
+/**
+ * Superclase abstracta que representa un videojuego.
+ */
+public abstract class Videojuego implements Valuable, Exportable {
+
+    private String titulo;
     private String genero;
-    private String plataforma;
-    private Float precio;
+    private int anio;
+    private double precio;
 
-    // public Videojuego() {
-    //     this.nombre = "";
-    //     this.desarrolladora = "";
-    //     this.genero = "";
-    //     this.plataforma = "";
-    //     this.precio = 0.0f; // float de dos decimales
-
-    // }
-
-    public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio) {
-        this.nombre = nombre;
-        this.desarrolladora = desarrolladora;
+    /**
+     * Constructor de Videojuego.
+     * @param titulo titulo del juego
+     * @param genero genero del juego
+     * @param anio anio de lanzamiento
+     * @param precio precio del juego
+     */
+    public Videojuego(String titulo, String genero, int anio, double precio) {
+        this.titulo = titulo;
         this.genero = genero;
-        this.plataforma = plataforma;
+        this.anio = anio;
         this.precio = precio;
     }
 
-    // public abstract String informacion();
+    public String getTitulo() { return titulo; }
+    public String getGenero() { return genero; }
+    public int getAnio() { return anio; }
+    public double getPrecio() { return precio; }
 
+    @Override
+    public double getValor() { return precio; }
+
+    /**
+     * Metodo abstracto que describe el tipo de juego.
+     * @return descripcion del tipo
+     */
+    public abstract String describeTipo();
+
+    @Override
+    public String toString() {
+        return titulo + " (" + anio + ") - " + genero + " - " + precio + "eu";
+    }
 }
