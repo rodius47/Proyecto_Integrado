@@ -1,45 +1,72 @@
 package pio.daw;
 
-/**
- * Superclase abstracta que representa un videojuego.
- */
-public abstract class Videojuego implements Valuable, Exportable {
-
-    private String titulo;
+public abstract class Videojuego {// implements Valorable, Exportable
+    private String nombre;
+    private String desarrolladora;
     private String genero;
-    private int anio;
-    private double precio;
+    private String plataforma;
+    private Float precio;
 
-    /**
-     * Constructor de Videojuego.
-     * @param titulo titulo del juego
-     * @param genero genero del juego
-     * @param anio anio de lanzamiento
-     * @param precio precio del juego
-     */
-    public Videojuego(String titulo, String genero, int anio, double precio) {
-        this.titulo = titulo;
+    // public Videojuego() {
+    //     this.nombre = "";
+    //     this.desarrolladora = "";
+    //     this.genero = "";
+    //     this.plataforma = "";
+    //     this.precio = 0.0f; // float de dos decimales
+
+    // }
+
+    public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio) {
+        this.nombre = nombre;
+        this.desarrolladora = desarrolladora;
         this.genero = genero;
-        this.anio = anio;
+        this.plataforma = plataforma;
         this.precio = precio;
     }
 
-    public String getTitulo() { return titulo; }
-    public String getGenero() { return genero; }
-    public int getAnio() { return anio; }
-    public double getPrecio() { return precio; }
-
-    @Override
-    public double getValor() { return precio; }
-
-    /**
-     * Metodo abstracto que describe el tipo de juego.
-     * @return descripcion del tipo
-     */
-    public abstract String describeTipo();
-
-    @Override
-    public String toString() {
-        return titulo + " (" + anio + ") - " + genero + " - " + precio + "eu";
+    //Esto en principio no se usaria
+    public String getNombre() {
+        return nombre;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDesarrolladora() {
+        return desarrolladora;
+    }
+
+    public void setDesarrolladora(String desarrolladora) {
+        this.desarrolladora = desarrolladora;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getPlataforma() {
+        return plataforma;
+    }
+    
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
+
+     public Float getPrecio() {
+        return precio;
+    }
+    
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
+    
+
+    // public abstract String informacion();
+
 }
