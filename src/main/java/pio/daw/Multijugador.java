@@ -22,8 +22,8 @@ public class Multijugador extends Videojuego{
      * @param precio
      * @param numeroJugadores
      */
-    public Multijugador(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer numeroJugadores, String modoDeJuego) {
-        super(nombre, desarrolladora, genero, plataforma, precio);
+    public Multijugador(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer año, Integer numeroJugadores, String modoDeJuego) {
+        super(nombre, desarrolladora, genero, plataforma, precio, año);
         this.numeroJugadores = numeroJugadores;
         this.modoDeJuego = modoDeJuego;
 

@@ -6,6 +6,7 @@ public abstract class Videojuego {// implements Valorable, Exportable
     private String genero;
     private String plataforma;
     private Float precio;
+    private Integer año;
 
     // public Videojuego() {
     //     this.nombre = "";
@@ -16,12 +17,13 @@ public abstract class Videojuego {// implements Valorable, Exportable
 
     // }
 
-    public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio) {
+    public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer año) {
         this.nombre = nombre;
         this.desarrolladora = desarrolladora;
         this.genero = genero;
         this.plataforma = plataforma;
         this.precio = precio;
+        this.año = año;
     }
 
     //Esto en principio no se usaria
@@ -57,12 +59,20 @@ public abstract class Videojuego {// implements Valorable, Exportable
         this.plataforma = plataforma;
     }
 
-     public Float getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
     
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+
+    public Integer getAño() {
+        return año;
+    }
+    
+    public void setPrecio(Integer año) {
+        this.año = año;
     }
 
     
