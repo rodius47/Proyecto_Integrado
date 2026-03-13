@@ -1,4 +1,4 @@
-package pio.daw;
+package pio.DAW;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
