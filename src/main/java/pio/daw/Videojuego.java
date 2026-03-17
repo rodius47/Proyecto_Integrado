@@ -76,6 +76,25 @@ public abstract class Videojuego implements Valuable, Exportable{
     }
     
 
+    /**
+     * Metodo generico para mostrar informacion de cualquier tipo, se puede usar para mostrar el nombre, la desarrolladora, el genero, etc.
+     * @param <T>
+     * @param dato
+     * @return
+     */
+    public <T> T mostrarInfo(T dato){
+        System.out.println("Info: " + dato);
+        return dato;
+    }
+
+    public abstract String describir(); // Identifica el tipo de juego dentro de la coleccion
+
+    // @Override
+    // public String toString(){
+
+    // }
+    
+
     // public abstract String informacion();
 
 }
