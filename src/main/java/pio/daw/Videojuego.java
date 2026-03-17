@@ -1,6 +1,6 @@
 package pio.daw;
 
-public abstract class Videojuego {// implements Valorable, Exportable
+public abstract class Videojuego implements Valuable, Exportable{
     private String nombre;
     private String desarrolladora;
     private String genero;
@@ -74,7 +74,6 @@ public abstract class Videojuego {// implements Valorable, Exportable
     public void setPrecio(Integer año) {
         this.año = año;
     }
-
     
 
     // public abstract String informacion();

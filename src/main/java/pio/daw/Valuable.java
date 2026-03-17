@@ -8,7 +8,7 @@ public interface Valuable {
      * Retorna el valor estimado del juego.
      * @return valor en euros
      */
-    double getValor();
+    Float getValor();
 
     /**
      * Indica si el juego es una ganga.

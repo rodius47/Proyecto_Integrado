@@ -36,6 +36,19 @@ public class Individual extends Videojuego{
         return duracion;
     }
 
+    // public interface Exportable
+    public String exportar(){  // cada clase sabe exportarse a JSON
+    return null;
+    }   
+
+    // public interface Valuable
+    public Float getValor(){
+        return getPrecio();
+    }
+    public boolean esGanga() {
+        return getValor() < 20.0;
+    }
+
 
 
 }
