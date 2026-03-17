@@ -51,11 +51,29 @@ public class Multijugador extends Videojuego{
     }   
 
     // public interface Valuable
+    @Override
     public Float getValor(){
         return getPrecio();
     }
+
+    @Override
     public boolean esGanga() {
-        return getValor() < 20.0;
+        return getValor() < 20;
+    }
+
+    @Override
+    public String describir() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String exportarCSV() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String exportarJSON() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
 

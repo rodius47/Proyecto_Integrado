@@ -71,30 +71,40 @@ public abstract class Videojuego implements Valuable, Exportable{
         return año;
     }
     
-    public void setPrecio(Integer año) {
+    /**
+     * Establece el año de lanzamiento del videojuego.
+     * @param año año de lanzamiento
+     */
+    public void setAño(Integer año) {
         this.año = año;
     }
-    
 
     /**
+     * Aplica un descuento al valor del videojuego.
+     *
+     * @param porcentaje porcentaje de descuento (0-100)
+     */
+    @Override
+    public void aplicarDescuento(Float porcentaje) {
+        this.precio = this.precio - (this.precio * porcentaje / 100);
+    }
+    
+    /**
      * Metodo generico para mostrar informacion de cualquier tipo, se puede usar para mostrar el nombre, la desarrolladora, el genero, etc.
-     * @param <T>
-     * @param dato
-     * @return
+     * @param <T> tipo de dato
+     * @param dato dato a mostrar
+     * @return el dato recibido
      */
     public <T> T mostrarInfo(T dato){
         System.out.println("Info: " + dato);
         return dato;
     }
 
-    public abstract String describir(); // Identifica el tipo de juego dentro de la coleccion
+    public abstract String describir(); // Identifica el tipo de juego dentro de la colección
 
-    // @Override
-    // public String toString(){
-
-    // }
-    
-
-    // public abstract String informacion();
-
+   @Override
+    public String toString() {
+        return "Videojuego{titulo='" + nombre + "', genero='" + genero
+                + "', anio=" + año + ", valor=" + precio + "}";
+    }
 }

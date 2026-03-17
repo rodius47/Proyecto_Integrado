@@ -17,4 +17,11 @@ public interface Valuable {
     default boolean esGanga() {
         return getValor() < 20.0;
     }
+
+    /**
+     * Aplica un descuento al valor del videojuego.
+     *
+     * @param porcentaje porcentaje de descuento (0-100)
+     */
+    void aplicarDescuento(Float porcentaje);
 }
