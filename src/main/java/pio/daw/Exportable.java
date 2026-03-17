@@ -1,12 +1,21 @@
 package pio.daw;
 
 /**
- * Interface que define la exportacion de un videojuego.
+ * Interface que permite exportar la información de un videojuego.
  */
 public interface Exportable {
+
     /**
-     * Exporta la informacion del juego.
-     * @return String con la informacion exportada
+     * Exporta la información del videojuego en formato CSV.
+     *
+     * @return String con los datos en formato CSV
      */
-    String exportar();
+    String exportarCSV();
+
+    /**
+     * Exporta la información del videojuego en formato JSON.
+     *
+     * @return String con los datos en formato JSON
+     */
+    String exportarJSON();
 }

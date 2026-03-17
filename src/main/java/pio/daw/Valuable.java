@@ -1,20 +1,21 @@
 package pio.daw;
 
 /**
- * Interface que define el valor de un videojuego.
+ * Interface que define el valor económico de un videojuego.
  */
 public interface Valuable {
+
     /**
-     * Retorna el valor estimado del juego.
+     * Retorna el valor estimado del videojuego.
+     *
      * @return valor en euros
      */
     double getValor();
 
     /**
-     * Indica si el juego es una ganga.
-     * @return true si vale menos de 20 euros
+     * Aplica un descuento al valor del videojuego.
+     *
+     * @param porcentaje porcentaje de descuento (0-100)
      */
-    default boolean esGanga() {
-        return getValor() < 20.0;
-    }
+    void aplicarDescuento(double porcentaje);
 }

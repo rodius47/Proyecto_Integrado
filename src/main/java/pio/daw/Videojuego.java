@@ -1,44 +1,52 @@
 package pio.daw;
 
-public abstract class Videojuego {// implements Valorable, Exportable
-    private String nombre;
-    private String desarrolladora;
+/**
+ * Superclase abstracta que representa un videojuego genérico.
+ */
+public abstract class Videojuego implements Valuable, Exportable {
+
+    /**
+     * Título del videojuego
+     */
+    private String titulo;
+
+    /**
+     * Género del videojuego
+     */
     private String genero;
-    private String plataforma;
-    private Float precio;
 
-    // public Videojuego() {
-    //     this.nombre = "";
-    //     this.desarrolladora = "";
-    //     this.genero = "";
-    //     this.plataforma = "";
-    //     this.precio = 0.0f; // float de dos decimales
+    /**
+     * Año de lanzamiento
+     */
+    private int anio;
 
-    // }
+    /**
+     * Valor económico del videojuego
+     */
+    private double valor;
 
-    public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio) {
-        this.nombre = nombre;
-        this.desarrolladora = desarrolladora;
+    /**
+     * Constructor de Videojuego.
+     *
+     * @param titulo título del juego
+     * @param genero género del juego
+     * @param anio año de lanzamiento
+     * @param valor precio en euros
+     */
+    public Videojuego(String titulo, String genero, int anio, double valor) {
+        this.titulo = titulo;
         this.genero = genero;
-        this.plataforma = plataforma;
-        this.precio = precio;
+        this.anio = anio;
+        this.valor = valor;
     }
 
-    //Esto en principio no se usaria
-    public String getNombre() {
-        return nombre;
+    // Getters y Setters
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDesarrolladora() {
-        return desarrolladora;
-    }
-
-    public void setDesarrolladora(String desarrolladora) {
-        this.desarrolladora = desarrolladora;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getGenero() {
@@ -49,24 +57,54 @@ public abstract class Videojuego {// implements Valorable, Exportable
         this.genero = genero;
     }
 
-    public String getPlataforma() {
-        return plataforma;
-    }
-    
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
+    public int getAnio() {
+        return anio;
     }
 
-     public Float getPrecio() {
-        return precio;
-    }
-    
-    public void setPrecio(Float precio) {
-        this.precio = precio;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
-    
+    public double getValor() {
+        return valor;
+    }
 
-    // public abstract String informacion();
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
 
+    /**
+     * Aplica un descuento al valor del videojuego.
+     *
+     * @param porcentaje porcentaje de descuento (0-100)
+     */
+    @Override
+    public void aplicarDescuento(double porcentaje) {
+        this.valor = this.valor - (this.valor * porcentaje / 100);
+    }
+
+    /**
+     * Método genérico con tipo T que retorna info del juego.
+     *
+     * @param <T> tipo de dato
+     * @param dato dato a mostrar
+     * @return el dato recibido
+     */
+    public <T> T mostrarInfo(T dato) {
+        System.out.println("Info: " + dato);
+        return dato;
+    }
+
+    /**
+     * Método abstracto que describe el tipo de videojuego.
+     *
+     * @return descripción del tipo
+     */
+    public abstract String describir();
+
+    @Override
+    public String toString() {
+        return "Videojuego{titulo='" + titulo + "', genero='" + genero
+                + "', anio=" + anio + ", valor=" + valor + "}";
+    }
 }
