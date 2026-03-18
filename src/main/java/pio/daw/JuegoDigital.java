@@ -32,15 +32,15 @@ public class JuegoDigital extends Videojuego {
         this.tamanoGB = tamanoGB;
     }
 
-    @Override
-    public String getPlataforma() {
-        return plataforma;
-    }
+    // @Override
+    // public String getPlataforma() {
+    //     return plataforma;
+    // }
 
-    @Override
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
-    }
+    // @Override
+    // public void setPlataforma(String plataforma) {
+    //     this.plataforma = plataforma;
+    // }
 
     public double getTamanoGB() {
         return tamanoGB;

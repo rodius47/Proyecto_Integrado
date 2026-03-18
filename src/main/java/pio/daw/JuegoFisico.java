@@ -39,7 +39,7 @@ public class JuegoFisico extends Videojuego {
      * @param tieneCaja
      */
     public JuegoFisico(String nombre,String desarrolladora, String plataforma, String genero, Integer año, Float precio, String estadoDisco, boolean tieneCaja) {
-        super(nombre, desarrolladora, plataforma, genero, precio , año);
+        super(nombre, desarrolladora,  genero, plataforma, precio , año);
         this.estadoDisco = estadoDisco;
         this.tieneCAja = tieneCaja;
     }

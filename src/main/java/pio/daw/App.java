@@ -9,9 +9,9 @@ public class App {
 
         // Crear objetos de cada subclase
         JuegoFisico j1 = new JuegoFisico("The Last of Us", "Naughty Dog", "PS4", "Accion", 2013, 19.99f, "Nuevo", true);
-        JuegoFisico j2 = new JuegoFisico("God of War", "Santa Monica Studio","PS4" , "Accion", 2018, 29.99f, "Bueno", true);
+        JuegoFisico j2 = new JuegoFisico("God of War", "Santa Monica Studio","PS4", "Accion", 2018, 29.99f, "Bueno", true);
         JuegoDigital j3 = new JuegoDigital("Hollow Knight", "Team Cherry", "PC","Plataforma", 2017, 14.99f, 9.0);
-        JuegoDigital j4 = new JuegoDigital("Celeste", "Maddy Makes Games", "PC", "Plataformas", 2018, 19.99f, 1.2);
+        JuegoDigital j4 = new JuegoDigital("Celeste", "Maddy Makes Games", "PC", "Plataforma", 2018, 19.99f, 1.2);
         JuegoDigital j5 = new JuegoDigital("Hades", "Supergiant Games", "PC", "Roguelike", 2020, 24.99f, 15.0);
 
         // Crear GameVault y agregar juegos
