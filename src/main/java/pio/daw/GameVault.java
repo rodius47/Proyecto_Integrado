@@ -23,7 +23,7 @@ public class GameVault {
     }
 
     public void mostrarCatalogo() {
-        System.out.println("\n CATALOGO GAMEVAULT ");
+        System.out.println("\n===== CATALOGO GAMEVAULT =====");
         for (Videojuego v : catalogo) {
             System.out.println(v);
             System.out.println("  -> " + v.describir());

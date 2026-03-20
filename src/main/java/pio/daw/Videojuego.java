@@ -104,7 +104,7 @@ public abstract class Videojuego implements Valuable, Exportable{
 
    @Override
     public String toString() {
-        return "Videojuego{titulo='" + nombre + "', genero='" + genero
-                + "', anio=" + año + ", valor=" + precio + "}";
+        return "Videojuego{titulo='" + nombre + "', desarrolladora='" + desarrolladora + "', plataforma='" + plataforma +  "', genero='" + genero
+                + "', año=" + año + ", precio=" + precio + "}";
     }
 }
