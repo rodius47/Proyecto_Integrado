@@ -56,27 +56,26 @@ public class Multijugador extends Videojuego{
         return getPrecio();
     }
 
-    @Override
-    public boolean esGanga() {
-        return getValor() < 20;
-    }
+    // @Override
+    // public boolean esGanga() {
+    //     return getValor() < 20;
+    // }
 
     @Override
     public String describir() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "Juego Multijugador | Modo de Juego: " + modoDeJuego + " | Ganga: " + (esGanga(getPrecio()) ? "Sí" : "No");
     }
 
     @Override
     public String exportarCSV() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return getNombre() + "," + getGenero() + "," + getAño() + ","
+                + getPrecio() + "," + getNumeroJugadores() + "," + getModoDeJuego();
     }
 
     @Override
     public String exportarJSON() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
+                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
+                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":" + getModoDeJuego() + "}";
     }
 }
-
-    // public String informacion(){
-    //     return System.out.printf("%s,  ", );
-    // }
