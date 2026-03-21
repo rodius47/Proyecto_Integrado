@@ -22,8 +22,8 @@ public class Multijugador extends Videojuego{
      * @param precio
      * @param numeroJugadores
      */
-    public Multijugador(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer numeroJugadores, String modoDeJuego) {
-        super(nombre, desarrolladora, genero, plataforma, precio);
+    public Multijugador(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer año, Integer numeroJugadores, String modoDeJuego) {
+        super(nombre, desarrolladora, genero, plataforma, precio, año);
         this.numeroJugadores = numeroJugadores;
         this.modoDeJuego = modoDeJuego;
 
@@ -45,7 +45,37 @@ public class Multijugador extends Videojuego{
         return modoDeJuego;
     }
 
-    // public String informacion(){
-    //     return System.out.printf("%s,  ", );
+    // public interface Exportable
+    public String exportar(){  // cada clase sabe exportarse a JSON
+    return null;
+    }   
+
+    // public interface Valuable
+    @Override
+    public Float getValor(){
+        return getPrecio();
+    }
+
+    // @Override
+    // public boolean esGanga() {
+    //     return getValor() < 20;
     // }
+
+    @Override
+    public String describir() {
+        return "Juego Multijugador | Modo de Juego: " + modoDeJuego + " | Ganga: " + (esGanga(getPrecio()) ? "Sí" : "No");
+    }
+
+    @Override
+    public String exportarCSV() {
+        return getNombre() + "," + getGenero() + "," + getAño() + ","
+                + getPrecio() + "," + getNumeroJugadores() + "," + getModoDeJuego();
+    }
+
+    @Override
+    public String exportarJSON() {
+        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
+                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
+                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":" + getModoDeJuego() + "}";
+    }
 }

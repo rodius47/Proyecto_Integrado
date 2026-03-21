@@ -4,10 +4,10 @@ public class Individual extends Videojuego{
 
     private String narrativa; // lineal(Uncharted), ramificada(tipo Telltale), sandbox(Practicamente haz lo que quieras), ambiental(Biosock)
     private String mundo; // abierto, cerrado, semiabierto, etc
-    private Float duracion; // En horas
+    private Integer duracion; // En horas
 
-    public Individual(String nombre, String desarrolladora, String genero, String plataforma, Float precio, String mundo, String narrativa, Float duracion) {
-        super(nombre, desarrolladora, genero, plataforma, precio);
+    public Individual(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer año, String mundo, String narrativa, Integer duracion) {
+        super(nombre, desarrolladora, genero, plataforma, precio, año);
         this.mundo = mundo;
         this.narrativa = narrativa;
         this.duracion = duracion;
@@ -28,14 +28,44 @@ public class Individual extends Videojuego{
     public String getMundo(){
         return mundo;
     }
-    public void setDuracion(Float duracion){
+    public void setDuracion(Integer duracion){
         this.duracion = duracion;
     }
 
-    public Float getDuracion(){
+    public Integer getDuracion(){
         return duracion;
     }
 
+    // public interface Exportable
+    public String exportar(){  // cada clase sabe exportarse a JSON
+    return null;
+    }   
 
+    @Override
+    public Float getValor(){
+        return getPrecio();
+    }
 
+    // @Override
+    // public boolean esGanga() {
+    //     return getValor() < 20;
+    // }
+
+    @Override
+    public String describir() {
+        return "Juego Individual | Mundo: " + mundo + " | Narrativa: " + narrativa + " | Duración: " + duracion + " | Ganga: " + (esGanga(getPrecio()) ? "Sí" : "No");
+    }
+
+    @Override
+    public String exportarCSV() {
+        return getNombre() + "," + getGenero() + "," + getAño() + ","
+                + getPrecio() + "," + getNarrativa() + "," + getMundo() + "," + getDuracion();
+    }
+
+    @Override
+    public String exportarJSON() {
+        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
+                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
+                + ",\"narrativa\":\"" + getNarrativa() + "\",\"mundo\":" + getMundo() + "\",\"tieneCaja\":" + getDuracion() + "}";
+    }
 }

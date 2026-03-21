@@ -1,39 +1,71 @@
 package pio.daw;
 
 /**
- * Subclase que representa un juego en formato digital.
+ * Subclase que representa un videojuego en formato digital.
  */
 public class JuegoDigital extends Videojuego {
 
+    /**
+     * Plataforma de descarga
+     */
     private String plataforma;
 
     /**
-     * Constructor de JuegoDigital.
-     * @param titulo titulo del juego
-     * @param genero genero del juego
-     * @param anio anio de lanzamiento
-     * @param precio precio del juego
-     * @param plataforma plataforma digital (Steam, PS Store, etc)
+     * Tamaño en GB
      */
-    public JuegoDigital(String titulo, String genero, int anio, double precio, String plataforma) {
-        super(titulo, genero, anio, precio);
+    private double tamanoGB;
+
+    /**
+     * Constructor de JuegoDigital.
+     *
+     * @param nombre título del juego
+     * @param desarrolladora desarrolladora del juego
+     * @param plataforma plataforma de descarga (Steam, Epic, PS Store...)
+     * @param genero género del juego
+     * @param año año de lanzamiento
+     * @param precio precio en euros
+     * @param tamanoGB tamaño en gigabytes
+     */
+    public JuegoDigital(String nombre,String desarrolladora, String plataforma, String genero, Integer año, Float precio,double tamanoGB) {
+        super(nombre, desarrolladora, genero, plataforma, precio, año);
         this.plataforma = plataforma;
+        this.tamanoGB = tamanoGB;
     }
 
-    public String getPlataforma() { return plataforma; }
+    public double getTamanoGB() {
+        return tamanoGB;
+    }
 
-    @Override
-    public String describeTipo() {
-        return "Juego Digital en plataforma: " + plataforma;
+    public void setTamanoGB(double tamanoGB) {
+        this.tamanoGB = tamanoGB;
     }
 
     @Override
-    public String exportar() {
-        return "DIGITAL | " + getTitulo() + " | " + getGenero() + " | " + getAnio() + " | " + getPrecio() + "eu | " + plataforma;
+    public Float getValor() {
+        return getPrecio();
+    }
+
+    @Override
+    public String describir() {
+        return "Juego Digital | Plataforma: " + plataforma + " | Tamaño: " + tamanoGB + " GB";
+    }
+
+    @Override
+    public String exportarCSV() {
+        return getNombre() + "," + getGenero() + "," + getAño() + ","
+                + getValor() + "," + plataforma + "," + tamanoGB;
+    }
+
+    @Override
+    public String exportarJSON() {
+        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
+                + "\",\"anio\":" + getAño() + ",\"valor\":" + getValor()
+                + ",\"plataforma\":\"" + plataforma + "\",\"tamanoGB\":" + tamanoGB + "}";
     }
 
     @Override
     public String toString() {
-        return "[DIGITAL] " + super.toString() + " | Plataforma: " + plataforma;
+        return "JuegoDigital{" + super.toString() + ", plataforma='" + plataforma
+                + "', tamanoGB=" + tamanoGB + "}";
     }
 }
