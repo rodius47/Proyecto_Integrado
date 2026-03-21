@@ -32,7 +32,7 @@ public class App {
         vault.mostrarPorGenero();
 
         // Exportar CSV
-        vault.exportarTodoCSV();
+        // vault.exportarTodoCSV();
 
         // Probar método genérico
         System.out.println("\n===== MÉTODO GENÉRICO =====");
