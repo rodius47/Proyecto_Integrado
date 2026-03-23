@@ -29,7 +29,7 @@ public class App {
         vault.mostrarCatalogo();
 
         // Mostrar por género
-        vault.mostrarPorGenero();
+        vault.mostrarPorGenero(); // Hay que combertirlo a un metodo mas amplio (PARA ORDENAR A GUSTO DEL USUARIO)
 
         // Exportar CSV
         vault.exportarTodoCSV();
@@ -44,5 +44,19 @@ public class App {
         System.out.println("Valor antes: " + j1.getValor());
         j1.aplicarDescuento(10f); // Aplicar 10% de descuento
         System.out.println("Valor después (10% descuento): " + j1.getValor());
+
+        // Todas las opciones del menú estaria bien que al seleccionarlas luego te dieran la posivilidad de volver a mostrar este texto, para ello esto abria que ponerlo fuera del app.
+        System.out.printf(  "Menú del programa: \n" +
+                            "Con este menú podras realizar vusquedas y más\n" + // Explicacion vasica de como funciona el menú
+                            "Pulse el boton contiguo a la acción que desea realizar\n" +
+                            "1. Mostar catalogo\n" + // Que imprima la lista completa de juegos que hay
+                            "2. Mostrar por genero\n" + // Imprime los juegos clasificados por genero
+                            "3. Mostrar clasificados por (elegir opcion)\n" + // ESTO AUN SE TIENE QUE CREAR. imprimira un texto con instrucciones al seleccionarlo para elegir como filtrar el contenido del catalogo
+                            "4. Añadir juego\n" + // POR HACER imprimira instrucciones para seleccionar que crear e insertar sus datos
+                            "5. Eliminar juego\n" + // POR HACER eleminara el juego que se quiera y pedira confirmación
+                            "6. Exportat a CSV\n" + // Esto lla estava implementado pero NO LO HACIA CORRECTAMENTE (correjirlo para qque funcione)
+                            "7. Exportar a JSON\n" + // Esto lla estava implementado pero NO LO HACIA CORRECTAMENTE (correjirlo para qque funcione)
+                            "8. Mostrar por ID del juego\n" // Puede que lo elimine para ponerlo en el 3. Cumple con la descripcion (que muestre los juegos por la ip que tenga cada juego asignada)
+                            );
     }
 }
