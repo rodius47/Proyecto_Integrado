@@ -10,6 +10,7 @@ public class GameVault {
 
     private ArrayList<Videojuego> catalogo;
     private HashMap<String, ArrayList<Videojuego>> porGenero;
+    
 
     public GameVault() {
         this.catalogo = new ArrayList<>();
