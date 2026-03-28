@@ -2,6 +2,7 @@ package pio.daw;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Clase principal que gestiona la coleccion de videojuegos.
@@ -10,6 +11,7 @@ public class GameVault {
 
     private ArrayList<Videojuego> catalogo;
     private HashMap<String, ArrayList<Videojuego>> porGenero;
+    ArrayList<Videojuego> juegosEliminados = new ArrayList<>();
     
 
     public GameVault() {
@@ -52,7 +54,25 @@ public class GameVault {
         return catalogo;
     }
 
+    public ArrayList<Videojuego> getJuegosEleiminados() {
+        return juegosEliminados;
+    }
+
     public HashMap<String, ArrayList<Videojuego>> getPorGenero() {
         return porGenero;
+    }
+
+    public ArrayList<Videojuego> eliminarVideojuego(String nombre){
+        Iterator<Videojuego> it = catalogo.iterator();
+        while (it.hasNext()) {
+            Videojuego v = it.next();
+            if (v.getNombre().equals(nombre)) {
+                it.remove();
+                juegosEliminados.add(v);
+            }
+        }
+        getJuegosEleiminados();
+        return catalogo;
+        
     }
 }

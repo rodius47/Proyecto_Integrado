@@ -5,10 +5,6 @@ package pio.daw;
  */
 public class JuegoDigital extends Videojuego {
 
-    /**
-     * Plataforma de descarga
-     */
-    private String plataforma;
 
     /**
      * Tamaño en GB
@@ -28,17 +24,21 @@ public class JuegoDigital extends Videojuego {
      */
     public JuegoDigital(String nombre,String desarrolladora, String plataforma, String genero, Integer año, Float precio,double tamanoGB) {
         super(nombre, desarrolladora, genero, plataforma, precio, año);
-        this.plataforma = plataforma;
         this.tamanoGB = tamanoGB;
     }
 
     public double getTamanoGB() {
-        return tamanoGB;
+        return this.tamanoGB;
     }
 
     public void setTamanoGB(double tamanoGB) {
         this.tamanoGB = tamanoGB;
     }
+
+    // @ Override
+    // public String getPlataforma() {
+    //     return super.getPlataforma();
+    // }
 
     @Override
     public Float getValor() {
@@ -47,25 +47,25 @@ public class JuegoDigital extends Videojuego {
 
     @Override
     public String describir() {
-        return "Juego Digital | Plataforma: " + plataforma + " | Tamaño: " + tamanoGB + " GB";
+        return "Juego Digital | Plataforma: " + getPlataforma() + " | Tamaño: " + getTamanoGB() + " GB";
     }
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getValor() + "," + plataforma + "," + tamanoGB;
+        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
+                + getValor() + ";" + getPlataforma() + ";" + getTamanoGB();
     }
 
     @Override
     public String exportarJSON() {
         return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
                 + "\",\"anio\":" + getAño() + ",\"valor\":" + getValor()
-                + ",\"plataforma\":\"" + plataforma + "\",\"tamanoGB\":" + tamanoGB + "}";
+                + ",\"plataforma\":\"" + getPlataforma() + "\",\"tamanoGB\":" + getTamanoGB() + "}";
     }
 
     @Override
     public String toString() {
-        return "JuegoDigital{" + super.toString() + ", plataforma='" + plataforma
-                + "', tamanoGB=" + tamanoGB + "}";
+        return "JuegoDigital{" + super.toString() + ", plataforma='" + getPlataforma()
+                + "', tamanoGB=" + getTamanoGB() + "}";
     }
 }

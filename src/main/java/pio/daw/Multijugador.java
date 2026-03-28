@@ -78,4 +78,10 @@ public class Multijugador extends Videojuego{
                 + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
                 + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":" + getModoDeJuego() + "}";
     }
+
+    @Override
+    public String toString() {
+        return "JuegoMultijugador{" + super.toString() + ", numeroJugadores=" + getNumeroJugadores()
+                + ", modoDeJuego='" + getModoDeJuego() + "'}";
+    }
 }
