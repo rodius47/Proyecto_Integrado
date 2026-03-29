@@ -68,4 +68,8 @@ public class Individual extends Videojuego{
                 + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
                 + ",\"narrativa\":\"" + getNarrativa() + "\",\"mundo\":" + getMundo() + "\",\"tieneCaja\":" + getDuracion() + "}";
     }
+    @Override
+    public String toString() {
+        return "JuegoIndividual{" + super.toString() + ", narrativa='" + getNarrativa() + "', mundo='" + getMundo() + "', duracion=" + getDuracion() + "}";
+    }
 }
