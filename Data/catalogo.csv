@@ -1,0 +1,8 @@
+tipo;titulo;desarrolladora;genero;plataforma;anio;valor;extra1;extra2;extra3
+JuegoFisico;The Last of Us;Naughty Dog;Accion;PS4;2013;19.99;Nuevo;true
+JuegoFisico;God of War;Santa Monica Studio;Accion;PS4;2018;29.99;Bueno;true
+JuegoDigital;Hollow Knight;Team Cherry;Plataforma;PC;2017;14.99;9.0
+JuegoDigital;Celeste;Maddy Makes Games;Plataforma;PC;2018;19.99;1.2
+JuegoDigital;Hades;Supergiant Games;Roguelike;PC;2020;24.99;15.0
+Multijugador;World of Warcraft;Blizzard;MMORPG;PC;2005;17.99;5;5 vs 5
+Individual;Red Dead Redemption II;Rockstar Games;Shooter;PS4;2018;39.99;Abierto;Ambiental;72

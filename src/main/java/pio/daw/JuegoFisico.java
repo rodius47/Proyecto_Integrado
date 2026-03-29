@@ -1,35 +1,18 @@
 package pio.daw;
 
-/**
- * Subclase que representa un videojuego en formato físico.
- */
 public class JuegoFisico extends Videojuego {
 
-    /**
-     * Estado del disco
-     */
     private String estadoDisco;
+    private boolean tieneCaja;
+    private String plataforma;
+    private String desarrolladora;
 
-    /**
-     * Indica si tiene caja original
-     */
-    private boolean tieneCAja;
-
-    /**
-     * Constructor de JuegoFisico.
-     *
-     * @param titulo título del juego
-     * @param genero género del juego
-     * @param anio año de lanzamiento
-     * @param valor precio en euros
-     * @param estadoDisco estado del disco (Nuevo, Bueno, Regular)
-     * @param tieneCaja si tiene caja original
-     */
-    public JuegoFisico(String titulo, String genero, int anio, double valor,
-            String estadoDisco, boolean tieneCaja) {
+    public JuegoFisico(String titulo, String desarrolladora, String plataforma, String genero, int anio, double valor, String estadoDisco, boolean tieneCaja) {
         super(titulo, genero, anio, valor);
+        this.desarrolladora = desarrolladora;
+        this.plataforma = plataforma;
         this.estadoDisco = estadoDisco;
-        this.tieneCAja = tieneCaja;
+        this.tieneCaja = tieneCaja;
     }
 
     public String getEstadoDisco() {
@@ -41,34 +24,48 @@ public class JuegoFisico extends Videojuego {
     }
 
     public boolean isTieneCaja() {
-        return tieneCAja;
+        return tieneCaja;
     }
 
     public void setTieneCaja(boolean tieneCaja) {
-        this.tieneCAja = tieneCaja;
+        this.tieneCaja = tieneCaja;
+    }
+
+    public String getPlataforma() {
+        return plataforma;
+    }
+
+    public String getDesarrolladora() {
+        return desarrolladora;
     }
 
     @Override
     public String describir() {
-        return "Juego Físico | Disco: " + estadoDisco + " | Caja: " + (tieneCAja ? "Sí" : "No");
+        return "Juego Fisico | Plataforma: " + plataforma + " | Disco: " + estadoDisco + " | Caja: " + (tieneCaja ? "Si" : "No");
     }
 
     @Override
     public String exportarCSV() {
-        return getTitulo() + "," + getGenero() + "," + getAnio() + ","
-                + getValor() + "," + estadoDisco + "," + tieneCAja;
+        return "JuegoFisico;" + getTitulo() + ";" + desarrolladora + ";"
+                + getGenero() + ";" + plataforma + ";" + getAnio() + ";"
+                + getValor() + ";" + estadoDisco + ";" + tieneCaja;
     }
 
     @Override
     public String exportarJSON() {
-        return "{\"titulo\":\"" + getTitulo() + "\",\"genero\":\"" + getGenero()
-                + "\",\"anio\":" + getAnio() + ",\"valor\":" + getValor()
-                + ",\"estadoDisco\":\"" + estadoDisco + "\",\"tieneCaja\":" + tieneCAja + "}";
+        return "{\"tipo\":\"JuegoFisico\",\"titulo\":\"" + getTitulo()
+                + "\",\"desarrolladora\":\"" + desarrolladora
+                + "\",\"genero\":\"" + getGenero()
+                + "\",\"plataforma\":\"" + plataforma
+                + "\",\"anio\":" + getAnio()
+                + ",\"valor\":" + getValor()
+                + ",\"estadoDisco\":\"" + estadoDisco
+                + "\",\"tieneCaja\":" + tieneCaja + "}";
     }
 
     @Override
     public String toString() {
-        return "JuegoFisico{" + super.toString() + ", estadoDisco='" + estadoDisco
-                + "', tieneCaja=" + tieneCAja + "}";
+        return "JuegoFisico{" + super.toString() + ", plataforma='" + plataforma
+                + "', estadoDisco='" + estadoDisco + "', tieneCaja=" + tieneCaja + "}";
     }
 }
