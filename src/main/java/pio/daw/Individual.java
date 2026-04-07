@@ -58,15 +58,15 @@ public class Individual extends Videojuego{
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getPrecio() + "," + getNarrativa() + "," + getMundo() + "," + getDuracion();
+        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
+                + getPrecio() + ";" + getNarrativa() + ";" + getMundo() + ";" + getDuracion();
     }
 
     @Override
     public String exportarJSON() {
         return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
                 + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
-                + ",\"narrativa\":\"" + getNarrativa() + "\",\"mundo\":" + getMundo() + "\",\"tieneCaja\":" + getDuracion() + "}";
+                + ",\"narrativa\":\"" + getNarrativa() + "\",\"mundo\":\"" + getMundo() + "\",\"tieneCaja\":" + getDuracion() + "}";
     }
     @Override
     public String toString() {

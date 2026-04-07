@@ -1,0 +1,9 @@
+[
+  {"titulo":"The Last of Us","genero":"Accion","anio":2013,"valor":19.99,"estadoDisco":"Nuevo","tieneCaja":true},
+  {"titulo":"God of War","genero":"Accion","anio":2018,"valor":29.99,"estadoDisco":"Bueno","tieneCaja":true},
+  {"titulo":"Hollow Knight","genero":"Plataforma","anio":2017,"valor":14.99,"plataforma":"PC","tamanoGB":9.0},
+  {"titulo":"Celeste","genero":"Plataforma","anio":2018,"valor":19.99,"plataforma":"PS5","tamanoGB":1.2},
+  {"titulo":"Hades","genero":"Roguelike","anio":2020,"valor":24.99,"plataforma":"PC","tamanoGB":15.0},
+  {"titulo":"World of Warcraft","genero":"MMORPG","anio":2005,"valor":17.99,"numeroJugadores":"5","modoDeJuego":"5 vs 5"},
+  {"titulo":"Red Dead Redemption II","genero":"Shooter","anio":2018,"valor":39.99,"narrativa":"Ambiental","mundo":"Abierto","tieneCaja":72}
+]

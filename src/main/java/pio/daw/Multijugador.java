@@ -68,15 +68,15 @@ public class Multijugador extends Videojuego{
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getPrecio() + "," + getNumeroJugadores() + "," + getModoDeJuego();
+        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
+                + getPrecio() + ";" + getNumeroJugadores() + ";" + getModoDeJuego();
     }
 
     @Override
     public String exportarJSON() {
         return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
                 + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
-                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":" + getModoDeJuego() + "}";
+                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":\"" + getModoDeJuego() + "\"}";
     }
 
     @Override

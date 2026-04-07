@@ -32,6 +32,14 @@ public class Catalogo {   //Utilizara el ArrayList y el Hasmap para mostrar los 
         // Exportar CSV
         vault.exportarTodoCSV();
 
+        //Exportar JSON
+        vault.exportarTodoJSON();
+
+        System.out.println("\n===== PRUEBA IMPORTAR CSV =====");
+        GameVault vault2 = new GameVault();
+        vault2.importarDesdeCSV("catalogo.csv");
+        vault2.mostrarCatalogo();
+
         // Probar método genérico
         System.out.println("\n===== MÉTODO GENÉRICO =====");
         j1.mostrarInfo("Probando método genérico con String");
@@ -278,6 +286,8 @@ public class Catalogo {   //Utilizara el ArrayList y el Hasmap para mostrar los 
                     
                     break;
                 case "8":
+                    vault2.importarDesdeCSV("catalogo.csv");
+                    vault2.mostrarCatalogo();
                     
                     break;
                 case "9":

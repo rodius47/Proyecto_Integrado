@@ -72,8 +72,8 @@ public class JuegoFisico extends Videojuego {
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getPrecio() + "," + estadoDisco + "," + tieneCAja;
+        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
+                + getPrecio() + ";" + estadoDisco + ";" + tieneCAja;
     }
 
     @Override
