@@ -72,14 +72,14 @@ public class JuegoFisico extends Videojuego {
 
     @Override
     public String exportarCSV() {
-        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
+        return "JuegoFisico;" + getNombre() + ";" + getDesarrolladora() + ";" + getGenero() + ";" + getPlataforma() + ";" + getAño() + ";"
                 + getPrecio() + ";" + estadoDisco + ";" + tieneCAja;
     }
 
     @Override
     public String exportarJSON() {
-        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
-                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
+        return "{\"tipo\":\"JuegoFisico\",\"titulo\":\"" + getNombre() + "\",\"desarrolladora\":\"" + getDesarrolladora() + "\",\"genero\":\"" + getGenero()
+                + "\",\"plataforma\":\"" + getPlataforma() + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
                 + ",\"estadoDisco\":\"" + estadoDisco + "\",\"tieneCaja\":" + tieneCAja + "}";
     }
 

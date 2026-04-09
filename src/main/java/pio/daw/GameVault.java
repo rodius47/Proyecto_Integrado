@@ -182,7 +182,7 @@ public class GameVault {
             }
         }
         getJuegosEleiminados();
-        return catalogo;
+        return juegosEliminados;
         
     }
 }

@@ -52,15 +52,15 @@ public class JuegoDigital extends Videojuego {
 
     @Override
     public String exportarCSV() {
-        return getNombre() + ";" + getGenero() + ";" + getAño() + ";"
-                + getValor() + ";" + getPlataforma() + ";" + getTamanoGB();
+        return "JuegoDigital;" + getNombre() + ";" + getDesarrolladora() + ";" + getGenero() + ";" + getPlataforma() + ";" + getAño() + ";"
+                + getValor() + ";" + getTamanoGB();
     }
 
     @Override
     public String exportarJSON() {
-        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
-                + "\",\"anio\":" + getAño() + ",\"valor\":" + getValor()
-                + ",\"plataforma\":\"" + getPlataforma() + "\",\"tamanoGB\":" + getTamanoGB() + "}";
+        return "{\"tipo\":\"JuegoDigital\",\"titulo\":\"" + getNombre() + "\",\"desarrolladora\":\"" + getDesarrolladora() + "\",\"genero\":\"" + getGenero()
+                + "\",\"plataforma\":\"" + getPlataforma() + "\",\"anio\":" + getAño() + ",\"valor\":\"" + getValor()
+                +"\",\"tamanoGB\":" + getTamanoGB() + "}";
     }
 
     @Override
