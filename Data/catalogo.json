@@ -5,5 +5,6 @@
   {"tipo":"JuegoDigital","titulo":"Celeste","desarrolladora":"Maddy Makes Games","genero":"Plataforma","plataforma":"PS5","anio":2018,"valor":"19.99","tamanoGB":1.2},
   {"tipo":"JuegoDigital","titulo":"Hades","desarrolladora":"Supergiant Games","genero":"Roguelike","plataforma":"PC","anio":2020,"valor":"24.99","tamanoGB":15.0},
   {"tipo":"Multijugador","titulo":"World of Warcraft","desarrolladora":"Un notas","genero":"MMORPG","plataforma":"PC","anio":2005,"valor":17.99,"numeroJugadores":"5","modoDeJuego":"5 vs 5"},
-  {"tipo":"Individual","titulo":"Red Dead Redemption II","desarrolladora":"Rockstar Games","genero":"Shooter","plataforma":"PS4","anio":2018,"valor":"39.99","mundo":"Abierto","narrativa":"Ambiental","tieneCaja":72}
+  {"tipo":"Individual","titulo":"Red Dead Redemption II","desarrolladora":"Rockstar Games","genero":"Shooter","plataforma":"PS4","anio":2018,"valor":"39.99","mundo":"Abierto","narrativa":"Ambiental","tieneCaja":72},
+  {"tipo":"JuegoFisico","titulo":"3","desarrolladora":"3","genero":"3","plataforma":"3","anio":3,"valor":3.0,"estadoDisco":"3","tieneCaja":false}
 ]

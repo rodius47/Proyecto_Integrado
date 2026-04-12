@@ -27,6 +27,10 @@ public class GameVault {
     }
 
     public void agregarJuego(Videojuego juego) {
+        if (existeJuego(juego)) {
+        System.out.println("El juego '" + juego.getNombre() + "' ya existe en el catálogo. No se agregará.");
+        return;
+    }
         catalogo.add(juego);
         porGenero.putIfAbsent(juego.getGenero(), new ArrayList<>());
         porGenero.get(juego.getGenero()).add(juego);
@@ -79,6 +83,9 @@ public class GameVault {
     public void importarDesdeCSV(String nombreFichero) {
         String ruta = "Data/" + nombreFichero;
         System.out.println("\n===== IMPORTAR CSV: " + ruta + " =====");
+        // Comprovar si un juego ya existe en el catalogo antes de agregarlo, para evitar duplicados
+
+
         try (BufferedReader br = new BufferedReader(
                 new java.io.InputStreamReader(new java.io.FileInputStream(ruta), "UTF-8"))) {
             String linea;
@@ -122,7 +129,14 @@ public class GameVault {
                         default:
                             System.out.println("Tipo desconocido: " + tipo);
                     }
-                    if (juego != null) { agregarJuego(juego); importados++; }
+                    if (juego != null) {
+                        if (!existeJuego(juego)) {
+                            agregarJuego(juego);
+                            importados++;
+                        } else {
+                            System.out.println("Duplicado detectado en CSV: " + juego.getNombre());
+                        }
+                    }
                 } catch (NumberFormatException e) {
                     System.out.println("Error de formato en linea: " + linea);
                 }
@@ -184,5 +198,14 @@ public class GameVault {
         getJuegosEleiminados();
         return juegosEliminados;
         
+    }
+
+    public boolean existeJuego(Videojuego juego) {
+        for (Videojuego v : catalogo) {
+            if (v.getNombre().equalsIgnoreCase(juego.getNombre())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
