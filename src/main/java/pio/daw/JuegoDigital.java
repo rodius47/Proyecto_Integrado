@@ -35,11 +35,6 @@ public class JuegoDigital extends Videojuego {
         this.tamanoGB = tamanoGB;
     }
 
-    // @ Override
-    // public String getPlataforma() {
-    //     return super.getPlataforma();
-    // }
-
     @Override
     public Float getValor() {
         return getPrecio();

@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 public class VentanaPrincipal extends JFrame{
 
     public GameVault catalogo = new GameVault();
-    // catalogo.importarDesdeCSV("catalogo.csv");
     public DefaultListModel<String> listModel;
     public JList lista;
 
@@ -37,11 +36,9 @@ public class VentanaPrincipal extends JFrame{
 
         
         JFrame frame = new JFrame("Mi GUI Básica");
-        // JButton boton = new JButton("MOSTRAR CATALOGO");
                             
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 200); // Tamaño de la ventana al aparecer
-        // frame.add(boton);
         frame.setVisible(true); // Si no esta en true la ventana no aparece
 
         // Lista
@@ -53,20 +50,20 @@ public class VentanaPrincipal extends JFrame{
 
         JPanel panel = new JPanel(new GridLayout(19, 2));
 
-        JTextField txtNombre = new JTextField();//S
-        JTextField txtGenero = new JTextField();//S
-        JTextField txtAño = new JTextField();//S
-        JTextField txtPlataforma = new JTextField();//S
-        JTextField txtDesarrolladora = new JTextField();//S
-        JTextField txtPrecio = new JTextField();//S
-        JTextField txtTamañoGB = new JTextField();//S
-        JTextField txtEstado = new JTextField();//S
-        JTextField txtTieneCaja = new JTextField();//S
-        JTextField txtNarrativa = new JTextField();//S
-        JTextField txtMundo = new JTextField();//S
-        JTextField txtDuracion = new JTextField();//S
-        JTextField txtJugadores = new JTextField();//S
-        JTextField txtModoMultijugador = new JTextField();//S
+        JTextField txtNombre = new JTextField();
+        JTextField txtGenero = new JTextField();
+        JTextField txtAño = new JTextField();
+        JTextField txtPlataforma = new JTextField();
+        JTextField txtDesarrolladora = new JTextField();
+        JTextField txtPrecio = new JTextField();
+        JTextField txtTamañoGB = new JTextField();
+        JTextField txtEstado = new JTextField();
+        JTextField txtTieneCaja = new JTextField();
+        JTextField txtNarrativa = new JTextField();
+        JTextField txtMundo = new JTextField();
+        JTextField txtDuracion = new JTextField();
+        JTextField txtJugadores = new JTextField();
+        JTextField txtModoMultijugador = new JTextField();
         JTextField txtTipo = new JTextField();
 
         
@@ -146,9 +143,6 @@ public class VentanaPrincipal extends JFrame{
                     Integer jugadoresMultijugador = Integer.parseInt(txtJugadores.getText());
                     String modoMultijugador = txtModoMultijugador.getText();
                     Integer año = Integer.parseInt(txtAño.getText());
-                    // JuegoFisico juegorg = new JuegoFisico(nombre, desarrolladora, plataforma, genero, año, precio, estado, tieneCaja);
-                    Catalogo juego = new Catalogo();
-                    // Videojuego Jueguitos = new Videojuego();
                     if (tip .equals("JuegoFisico") || tip.equals("1")) {
                         JuegoFisico juegorg  = new JuegoFisico(nombre, desarrolladora, plataforma, genero, año, precio, estado, tieneCaja);
                         catalogo.agregarJuego(juegorg);
@@ -191,11 +185,6 @@ public class VentanaPrincipal extends JFrame{
 
         // Acción eliminar
         btnEliminar.addActionListener(e -> {
-            // int index = lista.getSelectedIndex();
-            // if (index != -1) {
-            //     catalogo.eliminarVideojuego(getName());
-            //     actualizarLista();
-            // }
             String nombre = txtNombre.getText();
             catalogo.eliminarVideojuego(nombre);
                 actualizarLista();
@@ -204,8 +193,6 @@ public class VentanaPrincipal extends JFrame{
         //Importar CSV 
         btnImportar.addActionListener(e -> {
             listModel.clear();
-            // catalogo.importarDesdeCSV("catalogo.csv");
-            //     actualizarLista();
             String nombreFichero = JOptionPane.showInputDialog(VentanaPrincipal.this, "Ingrese el nombre del fichero CSV (ej: catalogo.csv):");
             if (nombreFichero != null && !nombreFichero.trim().isEmpty()) {
                 catalogo.importarDesdeCSV(nombreFichero.trim());
@@ -216,7 +203,6 @@ public class VentanaPrincipal extends JFrame{
         
         // Mostrar por Genero
         btnMostrarPorGenero.addActionListener(e -> {
-            // String genero = txtGenero.getText();
             String genero = JOptionPane.showInputDialog(VentanaPrincipal.this, "Ingrese el género a filtrar:");
             if (genero != null && !genero.trim().isEmpty()) {
                 listModel.clear();
@@ -256,11 +242,6 @@ public class VentanaPrincipal extends JFrame{
 
         setVisible(true);
     }
-
-
-    // // 
-    
-
 
     private void actualizarLista() {
         listModel.clear();

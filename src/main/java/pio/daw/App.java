@@ -27,8 +27,6 @@ public class App{
                 case "2":
                     GameVault catalogo = new GameVault();
                     new VentanaPrincipal(catalogo);
-                    // VentanaPrincipal ventana = new VentanaPrincipal();
-                    // ventana.NoTieneNombre(args);
                     break;
             
                 default:

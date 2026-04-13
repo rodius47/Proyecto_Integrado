@@ -8,15 +8,6 @@ public abstract class Videojuego implements Valuable, Exportable{
     private Float precio;
     private Integer año;
 
-    // public Videojuego() {
-    //     this.nombre = "";
-    //     this.desarrolladora = "";
-    //     this.genero = "";
-    //     this.plataforma = "";
-    //     this.precio = 0.0f; // float de dos decimales
-
-    // }
-
     public Videojuego(String nombre, String desarrolladora, String genero, String plataforma, Float precio, Integer año) {
         this.nombre = nombre;
         this.desarrolladora = desarrolladora;

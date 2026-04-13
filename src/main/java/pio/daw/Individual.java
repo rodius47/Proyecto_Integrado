@@ -46,11 +46,6 @@ public class Individual extends Videojuego{
         return getPrecio();
     }
 
-    // @Override
-    // public boolean esGanga() {
-    //     return getValor() < 20;
-    // }
-
     @Override
     public String describir() {
         return "Juego Individual | Mundo: " + mundo + " | Narrativa: " + narrativa + " | Duración: " + duracion + " | Ganga: " + (esGanga(getPrecio()) ? "Sí" : "No");
