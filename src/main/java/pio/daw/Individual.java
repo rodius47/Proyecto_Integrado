@@ -58,15 +58,15 @@ public class Individual extends Videojuego{
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getPrecio() + "," + getNarrativa() + "," + getMundo() + "," + getDuracion();
+        return "Individual;" + getNombre() + ";"+ getDesarrolladora() + ";" + getGenero() + ";" + getPlataforma() + ";" + getAño() + ";"
+                + getPrecio() + ";" + getMundo() + ";" + getNarrativa() + ";" + getDuracion();
     }
 
     @Override
     public String exportarJSON() {
-        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
-                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
-                + ",\"narrativa\":\"" + getNarrativa() + "\",\"mundo\":" + getMundo() + "\",\"tieneCaja\":" + getDuracion() + "}";
+        return "{\"tipo\":\"Individual\",\"titulo\":\"" + getNombre() + "\",\"desarrolladora\":\"" + getDesarrolladora() + "\",\"genero\":\"" + getGenero()
+                + "\",\"plataforma\":\"" + getPlataforma() + "\",\"anio\":" + getAño() + ",\"valor\":\"" + getPrecio()
+                + "\",\"mundo\":\"" + getMundo() +  "\",\"narrativa\":\"" + getNarrativa() + "\",\"tieneCaja\":" + getDuracion() + "}";
     }
     @Override
     public String toString() {

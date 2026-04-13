@@ -68,15 +68,15 @@ public class Multijugador extends Videojuego{
 
     @Override
     public String exportarCSV() {
-        return getNombre() + "," + getGenero() + "," + getAño() + ","
-                + getPrecio() + "," + getNumeroJugadores() + "," + getModoDeJuego();
+        return "Multijugador;" + getNombre() + ";" + getDesarrolladora() + ";" + getGenero() + ";" + getPlataforma() + ";" + getAño() + ";"
+                + getPrecio() + ";" + getNumeroJugadores() + ";" + getModoDeJuego();
     }
 
     @Override
     public String exportarJSON() {
-        return "{\"titulo\":\"" + getNombre() + "\",\"genero\":\"" + getGenero()
-                + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
-                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":" + getModoDeJuego() + "}";
+        return "{\"tipo\":\"Multijugador\",\"titulo\":\"" + getNombre() + "\",\"desarrolladora\":\"" + getDesarrolladora() + "\",\"genero\":\"" + getGenero()
+                + "\",\"plataforma\":\"" + getPlataforma() + "\",\"anio\":" + getAño() + ",\"valor\":" + getPrecio()
+                + ",\"numeroJugadores\":\"" + getNumeroJugadores() + "\",\"modoDeJuego\":\"" + getModoDeJuego() + "\"}";
     }
 
     @Override
